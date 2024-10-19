@@ -1,0 +1,107 @@
+.wishlist {
+  padding-top: 150px;
+  &__start {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 30px;
+    flex-wrap: wrap;
+    // text-align: center;
+  }
+  &-img {
+    border-radius: 15px;
+    object-fit: contain;
+    transition: 0.5s ease;
+  }
+  &-img:hover {     
+    transform: scale(1.1);
+  }
+  &__card {
+    position: relative;
+  }
+  &__empty1 {
+    display: flex;
+    gap: 200px;
+  }
+  &__em2 {
+    width: 100px;
+    margin-right: 300px;
+  }
+  &__em {
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    // position: absolute;
+  }
+  &__heart {
+    position: absolute;
+    top: 0;right: 0;
+    background-color: rgb(181, 181, 181);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 50%;
+    svg {
+      color: red;
+      font-size: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .wishlist {
+    &__em2 {
+      width: 100px;
+      margin-right: 200px;
+    }
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .wishlist {
+    &__em2 {
+      width: 100px;
+      margin-right: 100px;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .wishlist {
+    padding-top: 100px;
+    &__start {
+      display: grid;
+      grid-template-columns: repeat(3, 2fr);
+    }
+    &__em2 {
+      width: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+@media only screen and (max-width: 560px) {
+  .wishlist {
+    &__empty1 {
+      gap: 150px;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .wishlist {
+    padding-top: 100px;
+    &__start {
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+    }
+  }
+}
+@media only screen and (max-width: 370px) {
+  .wishlist {
+    padding-top: 100px;
+    &__start {
+      img {
+        width: 200px;
+      }
+    }
+    &__empty1 {
+      gap: 50px;
+    }
+  }
+}

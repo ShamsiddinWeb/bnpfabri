@@ -1,0 +1,35 @@
+.perfect {
+  padding-top: 100px;
+  img {
+    width: 100%;
+    border-radius: 30px;
+  }
+  &__span {
+    font-size: 14px;
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    span {
+      color: red;
+      margin-right: 30px;
+    }
+  }
+  &__text {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: rgb(100, 100, 100);
+    margin-bottom: 30px;
+    line-height: 35px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .perfect {
+    &__span {
+      font-size: 10px;
+    }
+    &__text {
+     font-size: 12px;
+    }
+  }
+}

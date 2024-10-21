@@ -39,7 +39,9 @@ const Footer = (props) => {
       <div className="container">
         <div className="footer__start">
           <div className="footer__left">
-            <img src={headerImg} alt="" width={300} />
+            <a href="#">
+              <img src={headerImg} alt="" width={300} />
+            </a>
             <p className="footer__left-text">{props.t("footer__text")}</p>
           </div>
           <div className="footer__menu">

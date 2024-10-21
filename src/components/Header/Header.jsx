@@ -66,7 +66,7 @@ function Header(props) {
           <div className="header__right">
             <div className="header__card">
               <ul className="header__list">{headerList}</ul>
-              <NavLink className="header__list-link1" to={"wishlist"}>
+              <NavLink  onClick={() => setToggle(!toogle)} className="header__list-link1" to={"wishlist"}>
                 {props.t("header__link5")}
                 <sup className="header__list-sup">{wishlist.length}</sup>
               </NavLink>

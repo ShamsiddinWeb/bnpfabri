@@ -1,0 +1,159 @@
+.searchFilter {
+  padding-top: 50px;
+  &__start {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 500px;
+    &-card {
+      width: 80%;
+      position: relative;
+      svg {
+        position: absolute;
+        right: -30px;
+        top: 5px;
+        background-color: red;
+        color: #fff;
+        padding: 15px;
+        border-radius: 50%;
+      }
+    }
+    &-inp {
+      padding: 20px;
+      width: 100%;
+      border-radius: 30px;
+      border: none;
+      background-color: #e6e6e6;
+      outline: none;
+    }
+    &-title {
+      margin-top: 70px;
+      margin-bottom: 40px;
+    }
+    &-category {
+      flex-direction: column;
+      gap: 10px;
+      p {
+        font-size: 14px;
+        opacity: 0.8;
+        padding-left: 50px;
+      }
+    }
+  }
+  &__right {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 20px;
+    &-noResults {
+      width: 100%;
+      // margin-left: 200px;
+      // // width: 800px;
+      // margin-top: 50px;
+      text-align: center;
+    }
+  }
+}
+.n {
+  button {
+    right: 0;
+  } 
+}
+@media only screen and (max-width: 1020px) {
+  .searchFilter {
+    &__right {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 870px) {
+  .searchFilter {
+    &__left {
+      width: 400px;
+    }
+    &__right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .searchFilter {
+    padding-top: 10px;
+    &__start {
+      flex-direction: column;
+    }
+    &__left {
+      width: 100%;
+      &-card {
+        svg {
+          padding: 5px;
+        }
+      }
+      &-inp {
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+      }
+      &-title {
+        display: none;
+      }
+      &-category {
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+        gap: 10px;
+        overflow-x: scroll; 
+        white-space: nowrap; 
+        scrollbar-color: #007bff #f1f1f1; 
+        scrollbar-width: thin;
+         p {
+          padding: 10px 20px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          color: rgb(255, 255, 255);
+          padding: 7px 10px;
+          border-radius: 10px;
+          font-size: 11px;
+          background-color: black;
+        }
+      }
+      &-category p.active {
+        background-color: red;
+      }
+      &-category::-webkit-scrollbar {
+        height: 8px; 
+      }
+      &-category::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      &-category::-webkit-scrollbar-thumb {
+        background: #007bff; 
+        border-radius: 10px; 
+      }
+      // &-category::-webkit-scrollbar-thumb:hover {
+      //   background: #0056b3; /* Hover qilinganda scrollbar rangi */
+      // }
+    }
+    &__right {
+      display: grid;
+      grid-template-columns: repeat(3, 2fr);
+      gap: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 530px) {
+  .searchFilter {
+    padding-top: 0;
+    &__right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}

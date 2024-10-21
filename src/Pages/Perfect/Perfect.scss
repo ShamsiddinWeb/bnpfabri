@@ -1,8 +1,12 @@
 .perfect {
   padding-top: 100px;
-  img {
-    width: 100%;
-    border-radius: 30px;
+  &__img {
+   width: 70%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 25px;
   }
   &__span {
     font-size: 14px;
@@ -21,6 +25,14 @@
     color: rgb(100, 100, 100);
     margin-bottom: 30px;
     line-height: 35px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .perfect {
+    &__img {
+      width: 100%;
+       
+     }
   }
 }
 @media only screen and (max-width: 500px) {

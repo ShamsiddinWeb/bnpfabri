@@ -24,7 +24,6 @@
     align-items: end;
     justify-content: end;
     color: #fff;
-    
   }
   &__text1 {
     font-size: 25px;
@@ -44,21 +43,10 @@
     margin: 0;
   }
 }
-.telegram {
-  position: fixed;
-  bottom: 10px;right: 10px;
-  font-size: 50px;
-  z-index: 22222;
-  // box-shadow: 0px 0px 0px rgba(250, 2, 2, 0.3), 10px 10px 10px rgba(255, 0, 0, 0.5);
-  background-color: transparent;
-  svg {
-    color: blue;
-  }
-}
+
 @media only screen and (max-width: 1200px) {
   .hero {
     &__start {
-
       padding-bottom: 200px;
     }
     &__img {
@@ -107,10 +95,11 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: #807d7d;
+      background-color: #ffffff;
+      // color: #fff;
     }
     &__img {
-      display: none;  
+      display: none;
     }
     p {
       color: #000000;

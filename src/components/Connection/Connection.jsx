@@ -31,7 +31,7 @@ const Connection = (props) => {
     e.preventDefault();
 
     let text = "";
-    text += "Mijoz Habar Yubordi: %0A%0A";
+    text += "Mijoz Mahsulotni sharhladi: %0A%0A";
     text += `Mijoz Emaili: ${name} %0A`;
     text += `Mijoz Telefon Raqami: ${tel} %0A`;
     text += `Mijoz xabari: ${tel} %0A`;

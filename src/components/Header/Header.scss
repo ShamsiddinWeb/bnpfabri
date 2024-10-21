@@ -33,21 +33,31 @@
       font-size: 20px;
       font-weight: 300;
       padding: 5px 8px;
+      // position: relative;
+    }
+    &-link1 {
+      color: #00000098;
+      font-size: 20px;
+      font-weight: 300;
+      padding: 5px 8px;
+      position: relative;
     }
     &-link:hover {
-      color: rgb(252, 0, 0);
+      color: rgb(252, 0, 0);;
     }
-    &-item {
-      position: relative;
+    &-link1:hover {
+      color: rgb(252, 0, 0);;
     }
     &-sup {
       position: absolute;
-      top: -8px;
+      top: 0px;
       right: 0;
-      color: rgb(0, 94, 255);
+      color: rgb(255, 255, 255);
       border-radius: 50%;
       font-size: 18px;
-      // padding: 5px;
+      padding: 1px 4px;
+      background-color: red;
+      font-size: 12px;
     }
   }
   &__select {

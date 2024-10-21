@@ -22,7 +22,8 @@
   "qualiyt__text1": "Material quality",
   "qualiyt__text2": "has been a company producing cotton fabrics for use around the world for many years.",
   "qualiyt__btn": "Stain",
-
+  
+  "product__cate": "Similar products",
   "product__title": "Winter collection",
   "product__title1": "Autumn collection",
   "product__title2": "Summer collection",
@@ -115,10 +116,22 @@
   "single__text10": "Special size",
   "single__text11": "Manufacturer:",
   "single__text12": "Bukhara natural product",
-  "single__text13": "Category: Winter collection",
+  "single__text13": "Category:  ",
 
   "perfect__text1" : "When the beautiful valley fills me with steam, and the meridian sun strikes the upper surface of the impenetrable leaves of my trees, and a few stray glimmers enter the inner temple, I find myself among the tall grass I leave. When I lie close to the ground, a thousand unknown plants come before me: I hear the noise of the little world among the stems, and meet the indescribable sights of insects and flies. The presence of Almighty God, who has formed us in his image, and that universal breath of love that sustains us, floats around us in eternal bliss; Then, my friend, when darkness covers my eyes, heaven and earth are in my heart. and as if absorbing its power into the image of its beloved mistress, I often think longingly, Oh, could I describe these concepts? As my soul is the mirror of the infinite God, it is the mirror of my soul To have a zgusi, everything that lives inside me can be affected on paper!",
  "perfect__text2" : "O friend - but it is too much for my strength - I sink under the weight of the glory of these visions! A wonderful calm has taken over my whole soul, like the sweet mornings of spring, which I enjoy with all my heart I am alone, I feel the charm of being in this place created for the happiness of souls like me.",
  "perfect__text3" : "I am so happy, my dear friend, that I am so engrossed in the wonderful feeling of living in peace that I neglect my talents. I am not able to draw a single stroke at present; and yet I never I feel that I was never as great an artist as I am now.",
- "perfect__text4" : "When the beautiful valley fills me with steam, and the meridian sun strikes the upper surface of the impenetrable leaves of my trees, and a few stray glimmers enter the inner temple, I find myself among the tall grass I leave. When I lie close to the ground, a thousand unknown plants come to my eyes: when I hear the rustle of a small world among the stems, and the indescribable appearance of insects and flies, I see us. The presence of Almighty God in his image, And that breath of universal love that upholds and sustains us, floats around us in eternal bliss; Then, my friend, when darkness covers my eyes, heaven and earth are in my heart. I often think wistfully: Oh, could I describe these concepts on paper, so that everything that lives inside me could be fully and warmly impressed." 
+ "perfect__text4" : "When the beautiful valley fills me with steam, and the meridian sun strikes the upper surface of the impenetrable leaves of my trees, and a few stray glimmers enter the inner temple, I find myself among the tall grass I leave. When I lie close to the ground, a thousand unknown plants come to my eyes: when I hear the rustle of a small world among the stems, and the indescribable appearance of insects and flies, I see us. The presence of Almighty God in his image, And that breath of universal love that upholds and sustains us, floats around us in eternal bliss; Then, my friend, when darkness covers my eyes, heaven and earth are in my heart. I often think wistfully: Oh, could I describe these concepts on paper, so that everything that lives inside me could be fully and warmly impressed." ,
+
+ "Review__text1" : "Product Reviews",
+ "Review__text2" : "Leave your review",
+ "Review__text3" : "Your rating:",
+ "Review__text4" : "Name *",
+ "Review__text5" : "Email *",
+ "Review__text6" : "Your review *",
+ "Review__text7" : "Submit a review",
+ "Review__text8" : "There are no comments yet.", 
+ "Review__text9" : "Email: ", 
+ "Review__text10" : "Rating: ",
+ "search" : "Search ..."
 }

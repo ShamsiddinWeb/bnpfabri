@@ -29,155 +29,185 @@ import productImg28 from "../assets/images/productImg28.jpg";
 import productImg29 from "../assets/images/productImg29.jpg";
 import productImg30 from "../assets/images/productImg30.jpg";
 
-export const data = [
+export var data = [
   {
     id: 1,
     textKey: "product__text1",
     img: productImg1,
+    category : "product__title"
   },
   {
     id: 2,
     textKey: "product__text2",
     img: productImg2,
+    category : "product__title"
   },
   {
     id: 3,
     textKey: "product__text3",
     img: productImg3,
+    category : "product__title"
   },
   {
     id: 4,
     textKey: "product__text4",
     img: productImg4,
+    category : "product__title"
   },
   {
     id: 5,
     textKey: "product__text5",
     img: productImg5,
+    category : "product__title"
   },
   {
     id: 6,
     textKey: "product__text6",
     img: productImg6,
+    category : "product__title"
   },
   {
     id: 7,
     textKey: "product__text7",
     img: productImg7,
+    category : "product__title"
   },
   {
     id: 8,
     textKey: "product__text8",
     img: productImg8,
+    category : "product__title"
   },
   {
     id: 9,
     textKey: "product__text9",
     img: productImg9,
+    category : "product__title"
   },
   {
     id: 10,
     textKey: "product__text10",
     img: productImg10,
+    category : "product__title"
   },
   {
     id: 11,
     textKey: "product__text11",
     img: productImg11,
+    category : "product__title1"
   },
   {
     id: 12,
     textKey: "product__text12",
     img: productImg12,
+    category : "product__title1"
   },
   {
     id: 13,
     textKey: "product__text13",
     img: productImg13,
+    category : "product__title1"
   },
   {
     id: 14,
     textKey: "product__text14",
     img: productImg14,
+    category : "product__title1"
   },
   {
     id: 15,
     textKey: "product__text15",
     img: productImg15,
+    category : "product__title1"
   },
   {
     id: 16,
     textKey: "product__text16",
     img: productImg16,
+    category : "product__title1"
   },
   {
     id: 17,
     textKey: "product__text17",
     img: productImg17,
+    category : "product__title1"
   },
   {
     id: 18,
     textKey: "product__text18",
     img: productImg18,
+    category : "product__title1"
   },
   {
     id: 19,
     textKey: "product__text19",
     img: productImg19,
+    category : "product__title1"
   },
   {
     id: 20,
     textKey: "product__text20",
     img: productImg20,
+    category : "product__title1"
   },
   {
     id: 21,
     textKey: "product__text21",
     img: productImg21,
+    category : "product__title2"
   },
   {
     id: 22,
     textKey: "product__text22",
     img: productImg22,
+    category : "product__title2"
   },
   {
     id: 23,
     textKey: "product__text23",
     img: productImg23,
+    category : "product__title2"
   },
   {
     id: 24,
     textKey: "product__text24",
     img: productImg24,
+    category : "product__title2"
   },
   {
     id: 25,
     textKey: "product__text25",
     img: productImg25,
+    category : "product__title2"
   },
   {
     id: 26,
     textKey: "product__text26",
     img: productImg26,
+    category : "product__title2"
   },
   {
     id: 27,
     textKey: "product__text27",
     img: productImg27,
+    category : "product__title2"
   },
   {
     id: 28,
     textKey: "product__text28",
     img: productImg28,
+    category : "product__title2"
   },
   {
     id: 29,
     textKey: "product__text29",
     img: productImg29,
+    category : "product__title2"
   },
   {
     id: 30,
     textKey: "product__text30",
     img: productImg30,
+    category : "product__title2"
   },
 ];

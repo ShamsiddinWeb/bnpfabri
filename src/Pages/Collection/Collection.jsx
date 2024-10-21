@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import News from "../../components/News/News";
 import "./Collection.scss"
+import SearchFilter from "../../components/SearchFilter/SearchFilter";
+
 
 const Collection = (props) => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const Collection = (props) => {
   }, []);
   return (
     <div className="collection">
-      <News t={props.t} />
+      <SearchFilter  t={props.t} />
     </div>
   );
 };

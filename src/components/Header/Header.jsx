@@ -31,12 +31,7 @@ function Header(props) {
       title: props.t("header__link4"),
       span: "",
     },
-    {
-      id: 5,
-      link: "wishlist",
-      title: props.t("header__link5"),
-      span: wishlist.length,
-    },
+
   ];
   const headerList = data?.map((e) => (
     <li
@@ -47,7 +42,7 @@ function Header(props) {
       <NavLink className="header__list-link" to={e.link}>
         {e.title}
       </NavLink>
-      <sup className="header__list-sup">{e.span}</sup>
+      
     </li>
   ));
 
@@ -71,6 +66,10 @@ function Header(props) {
           <div className="header__right">
             <div className="header__card">
               <ul className="header__list">{headerList}</ul>
+              <NavLink className="header__list-link1" to={"wishlist"}>
+                {props.t("header__link5")}
+                <sup className="header__list-sup">{wishlist.length}</sup>
+              </NavLink>
             </div>
             <select
               className="header__select"

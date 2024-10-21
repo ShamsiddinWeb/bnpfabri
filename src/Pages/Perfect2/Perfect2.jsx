@@ -11,7 +11,7 @@ const Perfect2 = (props) => {
     <section className='perfect'>
       <div className="container">
         <div className="perfect__start">
-          <img src={newsImg2} alt="" />
+          <img className="perfect__img" src={newsImg2} alt="" />
           <p className='perfect__span'><span>10/05/2019</span>{props.t("news__text")}</p>
           <p className='perfect__text'>{props.t("perfect__text1")}</p>
           <p className='perfect__text'>{props.t("perfect__text2")}</p>

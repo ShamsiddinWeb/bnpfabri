@@ -27,7 +27,6 @@ function App() {
       <Header laungage={laungage} handleChange={handleChange} t={t} />
       <Routes>
         <Route path="/" element={<Home t={t} />} />
-
         <Route path="/product/:id" element={<Single t={t} />} />
         <Route path="/about" element={<Abouts t={t} />} />
         <Route path="/contact" element={<Contact t={t} />} />
@@ -37,6 +36,7 @@ function App() {
         <Route path="/perfect-2" element={<Perfect2 t={t} />} />
         <Route path="/perfect-3" element={<Perfect3 t={t} />} />
       </Routes>
+
       <div className="telegram">
         <a
           className="telegram__icon"
@@ -46,6 +46,7 @@ function App() {
           <div className="telegram__ring"></div>
         </a>
       </div>
+
       <Footer t={t} />
     </>
   );

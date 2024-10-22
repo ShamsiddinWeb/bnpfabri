@@ -5,8 +5,6 @@ import qualityImg from "../../assets/images/quality__img.png";
 import qualityImg2 from "../../assets/images/q.png";
 import qualityImg3 from "../../assets/images/quality__img3.png";
 import Product from "../../components/Product/Product";
-import Product2 from "../../components/Product2/Produt2";
-import Product3 from "../../components/Product3/Product3";
 import News from "../../components/News/News";
 import Hero from "../../components/Hero/Hero";
 
@@ -17,11 +15,11 @@ const Home = (props) => {
       <Hero t={props.t} />
       <Services t={props.t} />
       <Qualiyt t={props.t} img={qualityImg} bgColor="#464351" />
-      <Product t={props.t} />
+      <Product t={props.t} sum={0} sum2={10} text = {props.t("product__title")}/>
       <Qualiyt t={props.t} img={qualityImg2} bgColor="#7f54b3" />
-      <Product2 t={props.t} />
+      <Product t={props.t} sum={10} sum2={20} text = {props.t("product__title1")}/>
       <Qualiyt t={props.t} img={qualityImg3} bgColor="#236f48" />
-      <Product3 t={props.t} />
+      <Product t={props.t} sum={20} sum2={30} text = {props.t("product__title2")}/>
       <News t={props.t} />
     </>
   );

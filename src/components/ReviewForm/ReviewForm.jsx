@@ -79,9 +79,6 @@ const ReviewForm = ({ productId, t }) => {
                 <p className="reviewForm__left-text">
                   <strong>{e.name}</strong> {e.date}
                 </p>
-                <p className="reviewForm__left-text1">
-                  <b>{t("Review__text9")}</b> {e.email}
-                </p>
                 <p className="reviewForm__left-text2">
                   <b>{t("Review__text10")}</b> <span>{e.rating} / 5</span>
                 </p>

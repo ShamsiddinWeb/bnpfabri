@@ -10,7 +10,7 @@ const Product = (props) => {
   let wishlist = useSelector((state) => state.wishlist.value);
   const dispatch = useDispatch();
 
-  let productData = data?.slice(0, 10).map((e) => (
+  let productData = data?.slice(props.sum, props.sum2).map((e) => (
     <li key={e.id} className="product__list-item">
       <Link to={`/product/${e.id}`}>
         <img
@@ -32,7 +32,7 @@ const Product = (props) => {
     <section className="product">
       <div className="container">
         <div className="product__start">
-          <h1 className="product__title">{props.t("product__title")}</h1>
+          <h1 className="product__title">{props.text}</h1>
           <p className="product__text">{props.t("product__text")}</p>
           <ul className="product__list">{productData}</ul>
         </div>

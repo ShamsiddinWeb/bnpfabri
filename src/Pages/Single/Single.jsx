@@ -49,6 +49,9 @@ const Single = (props) => {
     const y = ((e.pageY - top) / height) * 100;
     setBackgroundPosition(`${x}% ${y}%`);
   };
+  const handleRefresh = () => {
+    window.location.reload();
+  };
 
   return (
     <div>
@@ -151,8 +154,9 @@ const Single = (props) => {
                 <ul className="product__list">
                   {related.length > 0 ? (
                     related.slice(3, 8).map((item) => (
-                      <li key={item.id} className="product__list-item">
+                      <li onClick={handleRefresh} key={item.id} className="product__list-item">
                         <Link
+                          
                           to={`/product/${item.id}`}
                           onClick={() => window.scrollTo(0, 0)}
                         >

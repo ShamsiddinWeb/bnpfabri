@@ -53,9 +53,6 @@ const Footer = (props) => {
               <a className="footer__contact-text" href="tel:+998933837585">
                 +998 93 383 75 85
               </a>
-              <a className="footer__contact-text" href="tel:+998939607800">
-                +998 93 960 78 00
-              </a>
             </address>
           </div>
 

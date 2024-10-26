@@ -49,7 +49,6 @@ const Services = (props) => {
     <section className="services">
       <div className="container">
         <div className="services__start">
-          <h2 className="services__heading">{props.t("services__heading")}</h2>
           <ul className="services__list">{servicesData}</ul>
         </div>
       </div>

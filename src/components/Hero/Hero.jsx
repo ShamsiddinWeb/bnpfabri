@@ -11,8 +11,7 @@ const Hero = (props) => {
             className="hero__img" 
             src={heroImg} 
             alt="Hero section showing [describe image content here, e.g., brand visuals]" 
-            width="600" 
-            height="400" 
+            width={1800}
             loading="lazy"
           />
           <div className="hero__card">

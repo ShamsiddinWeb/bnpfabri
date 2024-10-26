@@ -8,6 +8,9 @@
   // padding-right: 40px;
   z-index: 20;
   transition: .2s linear;
+  &__wishlist-link {
+    position: relative;
+  }
   &__start {
     display: flex;
     justify-content: space-between;

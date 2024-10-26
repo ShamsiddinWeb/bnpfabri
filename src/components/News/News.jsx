@@ -49,7 +49,7 @@ const News = (props) => {
       <div className="container">
         <div className="news__start">
           <h2 id="news-section-title" className="news__title">{props.t("news__title")}</h2>
-          <p className="news__description">{props.t("quality__title")}</p>
+          <p className="news__description">{props.t("qualiyt__title")}</p>
           <ul className="news__list">{newsData}</ul>
         </div>
       </div>

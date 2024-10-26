@@ -82,15 +82,12 @@
 @media only screen and (max-width: 750px) {
   .product {
     padding-top: 50px;
-    &__text {
+    &__descriptionxt {
       margin-bottom: 50px;
     }
     &__list {
       grid-template-columns: repeat(2, 1fr);
       justify-content: space-around;
-      // &-img {
-      //   width: 250px;
-      // }
     }
   }
 }
@@ -121,9 +118,6 @@
 @media only screen and (max-width: 350px) {
   .product {
     &__list {
-      // &-img {
-      //   width: 130px;
-      // }
       &-text {
         font-size: 9px;
         max-width: 70px;

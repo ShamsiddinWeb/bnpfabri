@@ -66,22 +66,22 @@ const SearchFilter = (props) => {
               <h2 className="searchFilter__left-title">
                 {props.t("header__link2")}
               </h2>
-              <button
+              <p 
                 onClick={() => handleCategorySelect("")}
                 className={selectedCategory === "" ? "active" : ""}
                 aria-label="View all categories"
               >
                 {props.t("Barcha kategoriyalar")}
-              </button>
+              </p>
               {uniqueCategories.map((category, index) => (
-                <button
+                <p
                   key={index}
                   onClick={() => handleCategorySelect(category)}
                   className={selectedCategory === category ? "active" : ""}
                   aria-label={`Filter by ${props.t(category)}`}
                 >
                   {props.t(category)}
-                </button>
+                </p>
               ))}
             </div>
           </div>

@@ -35,9 +35,11 @@
     &-category {
       flex-direction: column;
       gap: 10px;
-      p {
+      button {
         font-size: 14px;
         opacity: 0.8;
+        border-top: 20px;
+        border: none;
         padding-left: 50px;
       }
     }

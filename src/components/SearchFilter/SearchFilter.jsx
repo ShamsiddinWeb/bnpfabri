@@ -48,41 +48,52 @@ const SearchFilter = (props) => {
         <div className="searchFilter__start">
           <div className="searchFilter__left">
             <div className="searchFilter__left-card">
+              <label htmlFor="searchInput" className="visually-hidden">
+                {props.t("search")}
+              </label>
               <input
+                id="searchInput"
                 className="searchFilter__left-inp"
                 type="text"
                 placeholder={props.t("search")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search products"
               />
-              <IoSearch />
+              <IoSearch aria-hidden="true" />
             </div>
             <div className="searchFilter__left-category">
               <h2 className="searchFilter__left-title">
                 {props.t("header__link2")}
               </h2>
-              <p
+              <button
                 onClick={() => handleCategorySelect("")}
-                className={selectedCategory === "" ? "active" : "p"}
+                className={selectedCategory === "" ? "active" : ""}
+                aria-label="View all categories"
               >
                 {props.t("Barcha kategoriyalar")}
-              </p>
+              </button>
               {uniqueCategories.map((category, index) => (
-                <p
+                <button
                   key={index}
                   onClick={() => handleCategorySelect(category)}
-                  className={selectedCategory === category ? "active" : "p"}
+                  className={selectedCategory === category ? "active" : ""}
+                  aria-label={`Filter by ${props.t(category)}`}
                 >
                   {props.t(category)}
-                </p>
+                </button>
               ))}
             </div>
           </div>
           <div className="searchFilter__right">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
-                <div key={product.id} className="product__list-item n">
-                  <Link to={`/product/${product.id}`}>
+                <article
+                  key={product.id}
+                  className="product__list-item"
+                  aria-labelledby={`product-title-${product.id}`}
+                >
+                  <Link to={`/product/${product.id}`} aria-label="View product details">
                     <img
                       className="product__list-img"
                       src={product.img}
@@ -92,24 +103,32 @@ const SearchFilter = (props) => {
                   <button
                     className="product__heart"
                     onClick={() => dispatch(toggleLike(product))}
+                    aria-label={
+                      wishlist?.some((el) => el.id === product.id)
+                        ? "Remove from wishlist"
+                        : "Add to wishlist"
+                    }
                   >
                     {wishlist?.some((el) => el.id === product.id) ? (
-                      <FaHeart />
+                      <FaHeart aria-hidden="true" />
                     ) : (
-                      <FaRegHeart />
+                      <FaRegHeart aria-hidden="true" />
                     )}
                   </button>
-                  <p className="product__list-text">
+                  <p id={`product-title-${product.id}`} className="product__list-text">
                     {props.t(product.textKey)}
                   </p>
-                </div>
+                </article>
               ))
             ) : (
-              <img
-                className="searchFilter__right-noResults"
-                src={noResults}
-                alt=""
-              />
+              <div className="searchFilter__noResults">
+                <img
+                  className="searchFilter__right-noResults"
+                  src={noResults}
+                  alt="No results found"
+                />
+                <p>{props.t("noResultsMessage")}</p>
+              </div>
             )}
           </div>
         </div>

@@ -6,7 +6,7 @@ import servicesIcon3 from "../../assets/icons/servicesIcon3.svg";
 import servicesIcon4 from "../../assets/icons/servicesIcon4.svg";
 
 const Services = (props) => {
-  let data = [
+  const data = [
     {
       id: 1,
       img: servicesIcon1,
@@ -33,19 +33,23 @@ const Services = (props) => {
     },
   ];
 
-  let servicesData = data?.map((e) => (
-    <li key={e.id} className="services__list-item">
-      <img src={e.img} alt="" className="services__list-img" />
+  const servicesData = data.map((service) => (
+    <li key={service.id} className="services__list-item" aria-labelledby={`service-title-${service.id}`}>
+      <img src={service.img} alt={`${service.title} icon`} className="services__list-img" />
       <div className="services__list-card">
-        <h3  className="services__list-title">{e.title}</h3>
-        <p className="services__list-text">{e.text}</p>
+        <h3 id={`service-title-${service.id}`} className="services__list-title">
+          {service.title}
+        </h3>
+        <p className="services__list-text">{service.text}</p>
       </div>
     </li>
   ));
+
   return (
     <section className="services">
       <div className="container">
         <div className="services__start">
+          <h2 className="services__heading">{props.t("services__heading")}</h2>
           <ul className="services__list">{servicesData}</ul>
         </div>
       </div>

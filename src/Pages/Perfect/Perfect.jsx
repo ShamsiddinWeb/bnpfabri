@@ -7,25 +7,31 @@ const Perfect = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
-    <section className="perfect">
+    <article className="perfect">
       <div className="container">
-        <div className="perfect__start">
-          <img className="perfect__img" src={newsImg1} alt="" />
+        <header className="perfect__start">
+          <img
+            className="perfect__img"
+            src={newsImg1}
+            alt={props.t("news__imageDescription")}
+          />
           <div>
             <p className="perfect__span">
               <span>10/05/2019</span>
               {props.t("news__text")}
             </p>
+            <h2 className="perfect__headline">{props.t("perfect__headline")}</h2> 
             <p className="perfect__text">{props.t("perfect__text1")}</p>
             <p className="perfect__text">{props.t("perfect__text2")}</p>
             <p className="perfect__text">{props.t("perfect__text3")}</p>
             <p className="perfect__text">{props.t("perfect__text4")}</p>
           </div>
-        </div>
+        </header>
         <Connection t={props.t} />
       </div>
-    </section>
+    </article>
   );
 };
 

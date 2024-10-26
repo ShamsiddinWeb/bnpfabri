@@ -4,80 +4,73 @@ import headerImg from "../../assets/icons/header__icon.png";
 import { Link } from "react-router-dom";
 
 const Footer = (props) => {
-  let data = [
-    {
-      id: 1,
-      link: "/",
-      title: props.t("header__link1"),
-    },
-    {
-      id: 2,
-      link: "collection",
-      title: props.t("header__link2"),
-    },
-    {
-      id: 3,
-      link: "about",
-      title: props.t("header__link3"),
-    },
-    {
-      id: 4,
-      link: "contact",
-      title: props.t("header__link4"),
-    },
+  const data = [
+    { id: 1, link: "/", title: props.t("header__link1") },
+    { id: 2, link: "/collection", title: props.t("header__link2") },
+    { id: 3, link: "/about", title: props.t("header__link3") },
+    { id: 4, link: "/contact", title: props.t("header__link4") },
   ];
-  const headerList = data?.map((e) => (
+
+  const headerList = data.map((e) => (
     <li key={e.id} className="footer__list-item">
-      <Link to={e.link} className="footer__list-link">
+      <Link to={e.link} className="footer__list-link" aria-label={e.title}>
         {e.title}
       </Link>
     </li>
   ));
 
   return (
-    <footer className="footer">
+    <footer className="footer" aria-labelledby="footer-heading">
       <div className="container">
         <div className="footer__start">
           <div className="footer__left">
-            <a href="#">
-              <img src={headerImg} alt="" width={300} />
+            <a href="#" aria-label="Company logo">
+              <img src={headerImg} alt="Company Logo" width={300} />
             </a>
             <p className="footer__left-text">{props.t("footer__text")}</p>
           </div>
+
           <div className="footer__menu">
-            <h4 className="footer__menu-title">{props.t("footer__menu")}</h4>
-            <ul className="footer__list">{headerList}</ul>
+            <h2 id="footer-heading" className="footer__menu-title">
+              {props.t("footer__menu")}
+            </h2>
+            <nav aria-label="Footer Navigation">
+              <ul className="footer__list">{headerList}</ul>
+            </nav>
           </div>
+
           <div className="footer__contact">
-            <h4 className="footer__contact-title">
+            <h3 className="footer__contact-title">
               {props.t("footer__contact")}
-            </h4>
-            <p className="footer__contact-text">
-              {props.t("footer__contact1")}
-            </p>
-            <p className="footer__contact-text">Bnpuz@bk.ru</p>
-            <p className="footer__contact-text">bnp_fabrik</p>
-            <p className="footer__contact-text">info@bnpfabric.com</p>
-            <a className="footer__contact-text" href="tel:+998933837585">
-              +998 93 383 75 85
-            </a>
-            <p>
-              {" "}
+            </h3>
+            <address className="footer__contact-info" aria-label="Contact Information">
+              <p className="footer__contact-text">
+                {props.t("footer__contact1")}
+              </p>
+              <p className="footer__contact-text">Email: Bnpuz@bk.ru</p>
+              <p className="footer__contact-text">Telegram: bnp_fabrik</p>
+              <p className="footer__contact-text">Email: info@bnpfabric.com</p>
+              <a className="footer__contact-text" href="tel:+998933837585">
+                +998 93 383 75 85
+              </a>
               <a className="footer__contact-text" href="tel:+998939607800">
                 +998 93 960 78 00
               </a>
-            </p>
+            </address>
           </div>
+
           <div className="footer__right">
             <h4 className="footer__right-title">{props.t("footer__email1")}</h4>
-            <form className="footer__right-form">
+            <form className="footer__right-form" aria-labelledby="email-subscription">
               <input
+                id="email-subscription"
                 className="footer__right-inp"
                 type="email"
                 placeholder={props.t("footer__email1")}
                 required
+                aria-label="Enter your email to subscribe"
               />
-              <button className="footer__right-btn">
+              <button type="submit" className="footer__right-btn">
                 {props.t("footer__btn")}
               </button>
             </form>

@@ -5,94 +5,88 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 
 function Header(props) {
-  let wishlist = useSelector((state) => state.wishlist.value);
-  let data = [
-    {
-      id: 1,
-      link: "/",
-      title: props.t("header__link1"),
-      span: "",
-    },
-    {
-      id: 2,
-      link: "collection",
-      title: props.t("header__link2"),
-      span: "",
-    },
-    {
-      id: 3,
-      link: "about",
-      title: props.t("header__link3"),
-      span: "",
-    },
-    {
-      id: 4,
-      link: "contact",
-      title: props.t("header__link4"),
-      span: "",
-    },
-
+  const wishlist = useSelector((state) => state.wishlist.value);
+  const data = [
+    { id: 1, link: "/", title: props.t("header__link1") },
+    { id: 2, link: "/collection", title: props.t("header__link2") },
+    { id: 3, link: "/about", title: props.t("header__link3") },
+    { id: 4, link: "/contact", title: props.t("header__link4") },
   ];
-  const headerList = data?.map((e) => (
+
+  const [toggle, setToggle] = useState(false);
+
+  const headerList = data.map((item) => (
     <li
-      key={e.id}
-      onClick={() => setToggle(!toogle)}
+      key={item.id}
+      onClick={() => setToggle(!toggle)}
       className="header__list-item"
     >
-      <NavLink className="header__list-link" to={e.link}>
-        {e.title}
+      <NavLink
+        className="header__list-link"
+        to={item.link}
+        aria-label={item.title}
+      >
+        {item.title}
       </NavLink>
-      
     </li>
   ));
 
-  const [toogle, setToggle] = useState(false);
   return (
-    <header className={`header ${toogle ? "open" : ""}`}>
+    <header
+      className={`header ${toggle ? "open" : ""}`}
+      aria-labelledby="header-navigation"
+    >
       <div className="container">
         <div
-          class="header__active dark_div"
-          onClick={() => setToggle(!toogle)}
+          className="header__overlay dark_div"
+          onClick={() => setToggle(!toggle)}
         ></div>
         <div className="header__start">
-          <Link to={"/"}>
+          <Link to="/" aria-label="Homepage">
             <img
               className="header__icon"
               src={headerImg}
-              alt="This is the logo"
+              alt="Company Logo"
               width={180}
             />
           </Link>
           <div className="header__right">
-            <div className="header__card">
+            <nav aria-label="Primary Navigation" className="header__card">
               <ul className="header__list">{headerList}</ul>
-              <NavLink  onClick={() => setToggle(!toogle)} className="header__list-link1" to={"wishlist"}>
+              <NavLink
+                onClick={() => setToggle(!toggle)}
+                className="header__list-link header__wishlist-link"
+                to="/wishlist"
+                aria-label="Wishlist"
+              >
                 {props.t("header__link5")}
                 <sup className="header__list-sup">{wishlist.length}</sup>
               </NavLink>
-            </div>
+            </nav>
+            <label htmlFor="language-select" className="visually-hidden">
+              {props.t("header__language")}
+            </label>
             <select
+              id="language-select"
               className="header__select"
-              name="Lng"
-              id="lng"
               onChange={props.handleChange}
-              value={props.laungage}
+              value={props.language}
             >
               <option value="uz">UZ</option>
               <option value="ru">RU</option>
               <option value="eng">ENG</option>
             </select>
-            <div className="header__menu-burgers">
-              <button
-                className="header__menu"
-                id="menu-burger"
-                onClick={() => setToggle(!toogle)}
-              >
-                <span className="header__menu-span"></span>
-                <span className="header__menu-span"></span>
-                <span className="header__menu-span"></span>
-              </button>
-            </div>
+            <button
+              className="header__menu-toggle"
+              aria-controls="header-navigation"
+              aria-expanded={toggle}
+              aria-label="Toggle menu"
+              onClick={() => setToggle(!toggle)}
+            >
+              <span className="header__menu-bar"></span>
+              <span className="header__menu-bar"></span>
+              <span className="header__menu-bar"></span>
+            </button>
           </div>
         </div>
       </div>

@@ -12,16 +12,21 @@ const Product = (props) => {
 
   let productData = data?.slice(props.sum, props.sum2).map((e) => (
     <li key={e.id} className="product__list-item">
-      <Link to={`/product/${e.id}`}>
+      <Link to={`/product/${e.id}`} aria-label={`View details of ${e.textKey}`}>
         <img
-          role="presentation"
           className="product__list-img"
           src={e.img}
-          alt=""
+          alt={`${e.textKey} image`}
           width={250}
+          height={250}
+          loading="lazy"
         />
       </Link>
-      <button className="product__heart" onClick={() => dispatch(toggleLike(e))}>
+      <button
+        className="product__heart"
+        onClick={() => dispatch(toggleLike(e))}
+        aria-label={`Add ${e.textKey} to wishlist`}
+      >
         {wishlist?.some((el) => el.id === e.id) ? <FaHeart /> : <FaRegHeart />}
       </button>
       <p className="product__list-text">{props.t(e.textKey)}</p>
@@ -29,11 +34,11 @@ const Product = (props) => {
   ));
 
   return (
-    <section className="product">
+    <section className="product" aria-labelledby="product-section-title">
       <div className="container">
         <div className="product__start">
-          <h1 className="product__title">{props.text}</h1>
-          <p className="product__text">{props.t("product__text")}</p>
+          <h1 id="product-section-title" className="product__title">{props.text}</h1>
+          <p className="product__description">{props.t("product__text")}</p>
           <ul className="product__list">{productData}</ul>
         </div>
       </div>

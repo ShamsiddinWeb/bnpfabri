@@ -11,7 +11,6 @@ const ReviewForm = ({ productId, t }) => {
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
 
-
   useEffect(() => {
     const storedReviews = localStorage.getItem(`reviews_${productId}`);
     if (storedReviews) {
@@ -21,14 +20,13 @@ const ReviewForm = ({ productId, t }) => {
           setReviews(parsedReviews);
         }
       } catch (error) {
-        console.error("Sharhlarni olishda xato: ", error);
+        console.error("Error fetching reviews: ", error);
       }
     }
   }, [productId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
 
     const newReview = {
       name,
@@ -41,24 +39,12 @@ const ReviewForm = ({ productId, t }) => {
     const updatedReviews = [newReview, ...reviews];
     setReviews(updatedReviews);
 
+    localStorage.setItem(`reviews_${productId}`, JSON.stringify(updatedReviews));
 
-    localStorage.setItem(
-      `reviews_${productId}`,
-      JSON.stringify(updatedReviews)
-    );
+    const message = `Mijoz Habar Yubordi:%0A%0AIsmi: ${name}%0AEmail: ${email}%0ARating: ${rating}%0ASharh: ${review}`;
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAt_ID}&text=${message}`;
 
-
-    let text = "";
-    text += "Mijoz Habar Yubordi: %0A%0A";
-    text += `Mijoz Ismi: ${name} %0A`;
-    text += `Mijoz Emaili: ${email} %0A`;
-    text += `Reyting: ${rating} %0A`;
-    text += `Sharh: ${review} %0A`;
-
-    let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAt_ID}&text=${text}`;
-
-
-    let api = new XMLHttpRequest();
+    const api = new XMLHttpRequest();
     api.open("GET", url, true);
     api.send();
 
@@ -71,73 +57,73 @@ const ReviewForm = ({ productId, t }) => {
   return (
     <div className="reviewForm">
       <div className="reviewForm__start">
-        <div className="reviewForm__left">
+        <section className="reviewForm__left">
           <h3 className="reviewForm__left-title">{t("Review__text1")}</h3>
           {reviews.length > 0 ? (
             reviews.map((e, index) => (
-              <div key={index} className="review-item">
+              <article key={index} className="review-item" aria-label="User review">
                 <p className="reviewForm__left-text">
-                  <strong>{e.name}</strong> {e.date}
+                  <strong>{e.name}</strong> — {e.date}
                 </p>
                 <p className="reviewForm__left-text2">
                   <b>{t("Review__text10")}</b> <span>{e.rating} / 5</span>
                 </p>
-                <br />
                 <p className="reviewForm__left-text3">{e.review}</p>
-              </div>
+              </article>
             ))
           ) : (
             <p>{t("Review__text8")}</p>
           )}
-        </div>
+        </section>
 
-        <form onSubmit={handleSubmit}>
-          <h3 className="reviewForm__left-title">{t("Review__text2")}</h3>
-          <label>
-            {t("Review__text3")}
-            <div className="rating">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  className={star <= rating ? "star selected" : "star"}
-                  onClick={() => setRating(star)}
-                >
-                  &#9733;
-                </span>
-              ))}
-            </div>
-          </label>
+        <form onSubmit={handleSubmit} aria-labelledby="review-form-title">
+          <h3 id="review-form-title" className="reviewForm__left-title">{t("Review__text2")}</h3>
 
-          <label>
-            {t("Review__text4")}
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </label>
+          <label htmlFor="rating">{t("Review__text3")}</label>
+          <div id="rating" className="rating" role="radiogroup" aria-label="Rating">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                role="radio"
+                aria-checked={star <= rating}
+                className={star <= rating ? "star selected" : "star"}
+                onClick={() => setRating(star)}
+              >
+                &#9733;
+              </span>
+            ))}
+          </div>
 
-          <label>
-            {t("Review__text5")}
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </label>
+          <label htmlFor="name">{t("Review__text4")}</label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            aria-required="true"
+          />
 
-          <label>
-            {t("Review__text6")}
-            <textarea
-              value={review}
-              onChange={(e) => setReview(e.target.value)}
-              required
-            />
-          </label>
+          <label htmlFor="email">{t("Review__text5")}</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            aria-required="true"
+          />
 
-          <button type="submit">{t("Review__text7")}</button>
+          <label htmlFor="review">{t("Review__text6")}</label>
+          <textarea
+            id="review"
+            value={review}
+            onChange={(e) => setReview(e.target.value)}
+            required
+            aria-required="true"
+          />
+
+          <button type="submit" aria-label="Submit review">{t("Review__text7")}</button>
         </form>
       </div>
     </div>

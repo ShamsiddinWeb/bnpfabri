@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleLike } from "../../context/wishlistSlice";
 
 const Single = (props) => {
-  let wishlist = useSelector((state) => state.wishlist.value);
+  const wishlist = useSelector((state) => state.wishlist.value);
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -21,18 +21,15 @@ const Single = (props) => {
   const [related, setRelated] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
-    const foundProduct = data?.find((item) => item.id === parseInt(id, 10));
+    const foundProduct = data.find((item) => item.id === parseInt(id, 10));
     if (foundProduct) {
       setProduct(foundProduct);
-      const related = data.filter(
-        (item) =>
-          item.category === foundProduct.category && item.id !== foundProduct.id
+      const relatedProducts = data.filter(
+        (item) => item.category === foundProduct.category && item.id !== foundProduct.id
       );
-
-      setRelated(related);
+      setRelated(relatedProducts);
     } else {
-      console.log("Product not found");
+      console.error("Product not found");
     }
     setLoading(false);
   }, [id]);
@@ -49,6 +46,7 @@ const Single = (props) => {
     const y = ((e.pageY - top) / height) * 100;
     setBackgroundPosition(`${x}% ${y}%`);
   };
+
   const handleRefresh = () => {
     window.location.reload();
   };
@@ -58,135 +56,108 @@ const Single = (props) => {
       {loading ? (
         <div className="loading">Loading...</div>
       ) : product ? (
-        <>
-          <section className="single">
-            <div className="container">
-              <div className="single__start">
-                <div
-                  className="single__card"
-                  onMouseMove={handleMouseMove}
-                  style={{
-                    backgroundImage: `url(${product.img})`,
-                    backgroundPosition: backgroundPosition,
-                    backgroundSize: "200%",
-                    transition: "background-position 0.1s ease",
-                  }}
-                >
-                  <img
-                    className="single__img"
-                    src={product.img}
-                    alt={product.textKey}
-                  />
-                  <div id="lens"></div>
-                </div>
-
-                <div className="single__left">
-                  <h2>{t(product.textKey)}</h2>
-                  <table className="single__left-table">
-                    <tbody>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text1")}
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text2")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text3")}
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text4")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text5")}:
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text6")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text7")}
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text8")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text9")}
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text10")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td">
-                          {props.t("single__text11")}:
-                        </td>
-                        <td className="single__left-td">
-                          {props.t("single__text12")}
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="single__left-td"></td>
-                        <td className="single__left-td"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p className="single__left-text">
-                    {props.t("single__text13")}
-                    {t(product.category)}
-                  </p>
-                </div>
+        <section className="single">
+          <div className="container">
+            <div className="single__start">
+              <div
+                className="single__card"
+                onMouseMove={handleMouseMove}
+                style={{
+                  backgroundImage: `url(${product.img})`,
+                  backgroundPosition: backgroundPosition,
+                  backgroundSize: "200%",
+                  transition: "background-position 0.1s ease",
+                }}
+                aria-label={t(product.textKey)} // Adding ARIA label for screen readers
+              >
+                <img
+                  className="single__img"
+                  src={product.img}
+                  alt={t(product.textKey)} // Ensure the alt text is descriptive
+                />
+                <div id="lens"></div>
               </div>
 
-              <ReviewForm t={props.t} productId={product.id} />
-
-              <div className="single__related">
-                <h3 className="single__related-title">
-                  {props.t("product__cate")}
-                </h3>
-                <ul className="product__list">
-                  {related.length > 0 ? (
-                    related.slice(3, 8).map((item) => (
-                      <li onClick={handleRefresh} key={item.id} className="product__list-item">
-                        <Link
-                          
-                          to={`/product/${item.id}`}
-                          onClick={() => window.scrollTo(0, 0)}
-                        >
-                          <img
-                            className="product__list-img"
-                            src={item.img}
-                            alt={item.name}
-                          />
-                        </Link>
-                        <button
-                          className="product__heart"
-                          onClick={() => dispatch(toggleLike(item))}
-                        >
-                          {wishlist?.some((el) => el.id === item.id) ? (
-                            <FaHeart />
-                          ) : (
-                            <FaRegHeart />
-                          )}
-                        </button>
-                        <p className="product__list-text">{t(item.textKey)}</p>
-                      </li>
-                    ))
-                  ) : (
-                    <p>No related products found</p>
-                  )}
-                </ul>
+              <div className="single__left">
+                <h2>{t(product.textKey)}</h2>
+                <table className="single__left-table">
+                  <tbody>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text1")}</td>
+                      <td className="single__left-td">{props.t("single__text2")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text3")}</td>
+                      <td className="single__left-td">{props.t("single__text4")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text5")}:</td>
+                      <td className="single__left-td">{props.t("single__text6")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text7")}</td>
+                      <td className="single__left-td">{props.t("single__text8")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text9")}</td>
+                      <td className="single__left-td">{props.t("single__text10")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td">{props.t("single__text11")}:</td>
+                      <td className="single__left-td">{props.t("single__text12")}</td>
+                    </tr>
+                    <tr>
+                      <td className="single__left-td"></td>
+                      <td className="single__left-td"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="single__left-text">
+                  {props.t("single__text13")}
+                  {t(product.category)}
+                </p>
               </div>
             </div>
-          </section>
-        </>
+
+            <ReviewForm t={props.t} productId={product.id} />
+
+            <div className="single__related">
+              <h3 className="single__related-title">{props.t("product__cate")}</h3>
+              <ul className="product__list">
+                {related.length > 0 ? (
+                  related.slice(3, 8).map((item) => (
+                    <li key={item.id} className="product__list-item" onClick={handleRefresh}>
+                      <Link
+                        to={`/product/${item.id}`}
+                        onClick={() => window.scrollTo(0, 0)}
+                      >
+                        <img
+                          className="product__list-img"
+                          src={item.img}
+                          alt={t(item.textKey)} // Ensure alt text is descriptive
+                        />
+                      </Link>
+                      <button
+                        className="product__heart"
+                        onClick={() => dispatch(toggleLike(item))}
+                        aria-label={wishlist?.some((el) => el.id === item.id) ? "Remove from wishlist" : "Add to wishlist"} // Add ARIA label for accessibility
+                      >
+                        {wishlist?.some((el) => el.id === item.id) ? (
+                          <FaHeart />
+                        ) : (
+                          <FaRegHeart />
+                        )}
+                      </button>
+                      <p className="product__list-text">{t(item.textKey)}</p>
+                    </li>
+                  ))
+                ) : (
+                  <p>{t("No related products found")}</p> // Use translation for consistency
+                )}
+              </ul>
+            </div>
+          </div>
+        </section>
       ) : (
         <img className="single__not" src={not} alt="Product not found" />
       )}

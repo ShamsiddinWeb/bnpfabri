@@ -126,12 +126,12 @@ const Single = (props) => {
               <ul className="product__list">
                 {related.length > 0 ? (
                   related.slice(3, 8).map((item) => (
-                    <li key={item.id} className="product__list-item" onClick={handleRefresh}>
+                    <li key={item.id} className="product__list-item">
                       <Link
                         to={`/product/${item.id}`}
                         onClick={() => window.scrollTo(0, 0)}
                       >
-                        <img
+                        <img onClick={handleRefresh}
                           className="product__list-img"
                           src={item.img}
                           alt={t(item.textKey)} // Ensure alt text is descriptive

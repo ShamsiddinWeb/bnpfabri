@@ -115,12 +115,12 @@ const Connection = (props) => {
           <ul className="connection__list" aria-label="Contact Information">
             <li className="connection__list-item">
               <MdOutlineTextsms />
-              <a href="mailto:info@bnpfabric.uz">Email: info@bnpfabric.uz</a>
+              <a href="mailto:info@bnpfabric.uz">Email: sleepnest@gmail.com</a>
             </li>
             <li className="connection__list-item">
               <MdOutlinePhoneInTalk />
-              <a href="tel:998933837585">Тел: +998 93 383 75 85</a><br />
-              <a href="tel:998939607800">+998 93 960 78 00</a>
+              <a href="tel:998940337212">Тел: +998 94 033 72 12</a><br />
+              <a href="tel:998917777368">+998 91 777 73 68</a>
             </li>
             <li className="connection__list-item">
               <IoLocationOutline />

@@ -13,6 +13,7 @@ const News = (props) => {
       img: newsImg1,
       link: "perfect",
       altText: "Description of the first news image",
+      title :  props.t("news__title1")
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const News = (props) => {
       img: newsImg2,
       link: "perfect-2",
       altText: "Description of the second news image",
+      title :  props.t("news__title2")
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ const News = (props) => {
       img: newsImg3,
       link: "perfect-3",
       altText: "Description of the third news image",
+      title :  props.t("news__title3")
     },
   ];
 
@@ -36,10 +39,10 @@ const News = (props) => {
         <img className="news__list-img" src={e.img} alt={e.altText} loading="lazy" width="400" height="300" />
       </Link>
       <div className="news__list-card">
-        <time className="news__list-card__date" dateTime="2019-05-10">10/05/2019</time>
+        <time className="news__list-card__date" dateTime="2024-05-10">10/05/2024</time>
         <p className="news__list-card__text">{props.t("news__text")}</p>
       </div>
-      <h3 className="news__list-title">{props.t("news__title1")}</h3>
+      <h3 className="news__list-title">{e.title}</h3>
       <p className="news__list-text">{e.text}</p>
     </li>
   ));

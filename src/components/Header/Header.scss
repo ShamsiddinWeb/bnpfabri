@@ -46,21 +46,24 @@
       position: relative;
     }
     &-link:hover {
-      color: rgb(252, 0, 0);;
+      color: #a17f4a;
     }
     &-link1:hover {
-      color: rgb(252, 0, 0);;
+      color: #a17f4a;
     }
     &-sup {
       position: absolute;
-      top: 0px;
-      right: 0;
+      top: -3px;
+      right: -3px;
       color: rgb(255, 255, 255);
       border-radius: 50%;
       font-size: 18px;
       padding: 1px 4px;
-      background-color: red;
+      background-color: rgb(0, 0, 0);
       font-size: 12px;
+      &-svg {
+        color: red;
+      }
     }
   }
   &__select {
@@ -68,10 +71,10 @@
     font-weight: 600;
     border-radius: 10px;
     font-size: 20px;
-    border: 2px solid #f7f7f77a;
+    border: 2px solid #a17f4a;
     padding: 5px 7px;
     cursor: pointer;
-    background-color: #131313a6;
+    background-color: #a17f4a;
   }
   &__select1{
     display: none;
@@ -79,10 +82,10 @@
     font-weight: 600;
     border-radius: 10px;
     font-size: 20px;
-    border: 2px solid #f7f7f77a;
+    border: 2px solid #a17f4a;
     padding: 5px 7px;
     cursor: pointer;
-    background-color: #131313a6;
+    background-color: #a17f4a;
   }
   &__active {
     position: fixed;
@@ -127,7 +130,8 @@
   }
 }
 .active {
-  color: red;
+  color: #a17f4a;
+  font-weight: 500;
 }
 .header__menu-toggle {
   height: 100%;

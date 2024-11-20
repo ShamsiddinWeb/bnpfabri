@@ -3,6 +3,7 @@ import headerImg from "../../assets/icons/header__icon.png";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 import { useSelector } from "react-redux";
+import {  FaHeart } from "react-icons/fa";
 
 function Header(props) {
   const wishlist = useSelector((state) => state.wishlist.value);
@@ -59,7 +60,7 @@ function Header(props) {
                 to="/wishlist"
                 aria-label="Wishlist"
               >
-                {props.t("header__link5")}
+                < FaHeart className="header__list-sup-svg"  />
                 <sup className="header__list-sup">{wishlist.length}</sup>
               </NavLink>
             </nav>

@@ -47,11 +47,11 @@ const Footer = (props) => {
               <p className="footer__contact-text">
                 {props.t("footer__contact1")}
               </p>
-              <p className="footer__contact-text">Email: Bnpuz@bk.ru</p>
-              <p className="footer__contact-text">Telegram: bnp_fabrik</p>
-              <p className="footer__contact-text">Email: info@bnpfabric.com</p>
-              <a className="footer__contact-text" href="tel:+998933837585">
-                +998 93 383 75 85
+              <p className="footer__contact-text">Email: sleepnest@gamil.com</p>
+              <p className="footer__contact-text">Telegram: sleepnest</p>
+              
+              <a className="footer__contact-text" href="tel:+998940337212">
+                +998 94 033 72 12
               </a>
             </address>
           </div>

@@ -21,7 +21,7 @@ function App() {
   const handleChange = (event) => {
     const selectedLanguage = event.target.value;
     i18n.changeLanguage(selectedLanguage);
-    localStorage.setItem("i18nextLng", selectedLanguage); // Save selected language
+    localStorage.setItem("i18nextLng", selectedLanguage); 
   };
 
   return (
@@ -44,12 +44,12 @@ function App() {
       <div className="telegram">
         <a
           className="telegram__icon"
-          href="https://telegram.me/Bukharanaturalproduct"
+          href="https://t.me/Shamsiddin_69_75"
           aria-label={t("telegram__link")} // Provide descriptive label for accessibility
           target="_blank"
           rel="noopener noreferrer"
         >
-          <BsTelegram />
+          <BsTelegram  className="telegram__icon"/>
           <div className="telegram__ring"></div>
         </a>
       </div>

@@ -2,7 +2,8 @@
   padding-top: 100px;
   &__start {
     position: relative;
-    background-color: #444;
+    background-color: #f5efe6;
+    color: #7a5c33;
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
@@ -23,14 +24,14 @@
     display: flex;
     align-items: end;
     justify-content: end;
-    color: #fff;
+    color: #a17f4a;
   }
   &__text1 {
     font-size: 25px;
     line-height: 20px;
     padding: 0;
     text-align: end;
-    color: #fff;
+    // color: #fff;
     margin: 0;
   }
   &__text2 {
@@ -41,9 +42,29 @@
     line-height: 40px;
   }
   &__text3 {
-    font-size: 115px;
+    font-size: 95px;
     margin: 0;
   }
+}
+@keyframes gradientBackground {
+  0% {
+    background-color: #ecdabf;
+  }
+  25% {
+    background-color: #dcba94;
+  }
+  50% {
+    background-color: #eabb74;
+  }
+  75% {
+    background-color: #dcba94;
+  }
+  100% {
+    background-color: #ecdabf;
+  }
+}
+.hero__start {
+  animation: gradientBackground 3s infinite;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -63,7 +84,7 @@
       font-size: 45px;
     }
     &__text3 {
-      font-size: 95px;
+      font-size: 75px;
     }
   }
 }
@@ -74,8 +95,8 @@
     }
     &__img {
       left: -140px;
-      top: 50px;
-      width: 800px;
+      top: -80px;
+      width: 1200px;
     }
     &__text1 {
       font-size: 20px;
@@ -84,8 +105,21 @@
       font-size: 35px;
     }
     &__text3 {
-      font-size: 75px;
+      font-size: 55px;
     }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .hero {
+    &__start {
+      padding-bottom: 100px;
+    }
+    &__img {
+      left: -140px;
+      top: -40px;
+      width: 1200px;
+    }
+
   }
 }
 @media only screen and (max-width: 720px) {
@@ -104,18 +138,18 @@
       display: none;
     }
     p {
-      color: #000000;
+    
     }
     &__text1 {
       font-size: 20px;
-      color: #000000;
+     
     }
     &__text2 {
       font-size: 35px;
       margin: 0;
     }
     &__text3 {
-      font-size: 75px;
+      font-size: 45px;
     }
   }
 }
@@ -126,14 +160,14 @@
     }
     &__text1 {
       font-size: 20px;
-      color: #000000;
+    
     }
     &__text2 {
       font-size: 25px;
       margin: 0;
     }
     &__text3 {
-      font-size: 55px;
+      font-size: 35px;
     }
   }
 }
@@ -149,7 +183,7 @@
       margin: 0;
     }
     &__text3 {
-      font-size: 45px;
+      font-size: 30px;
     }
   }
 }
@@ -164,7 +198,7 @@
       margin: 0;
     }
     &__text3 {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 }

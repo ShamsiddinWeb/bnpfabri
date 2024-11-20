@@ -15,12 +15,12 @@ const Perfect3 = (props) => {
           <img 
             className="perfect__img" 
             src={newsImg3} 
-            alt={props.t("news__imageDescription")} // Provide a descriptive alt text
+            alt={props.t("news__imageDescription")} 
           />
           <p className='perfect__span'>
             <span>10/05/2019</span> {props.t("news__text")}
           </p>
-          <h2 className='perfect__headline'>{props.t("perfect__headline")}</h2> {/* Add a headline for SEO */}
+          <h2 className='perfect__title'>{props.t("news__title3")}</h2>
           <p className='perfect__text'>{props.t("perfect__text1")}</p>
           <p className='perfect__text'>{props.t("perfect__text2")}</p>
           <p className='perfect__text'>{props.t("perfect__text3")}</p>

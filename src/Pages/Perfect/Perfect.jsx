@@ -22,7 +22,7 @@ const Perfect = (props) => {
               <span>10/05/2019</span>
               {props.t("news__text")}
             </p>
-            <h2 className="perfect__headline">{props.t("perfect__headline")}</h2> 
+            <h2 className="perfect__title">{props.t("news__title1")}</h2> 
             <p className="perfect__text">{props.t("perfect__text1")}</p>
             <p className="perfect__text">{props.t("perfect__text2")}</p>
             <p className="perfect__text">{props.t("perfect__text3")}</p>
